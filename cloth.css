@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000 0%, #1a0000 40%, #4a0000 70%, #ff0000 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  body {
+    flex-direction: column; 
+    height: auto;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+
+
+nav {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  border-bottom: 3px solid #4a0000;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+/* wrapper menampung logo dan menu */
+nav .wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo */
+.logo a {
+  font-size: 33px;
+  font-weight: 800;
+  color: aliceblue;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
+}
+
+/* menu utama */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* daftar link */
+.links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.links li a {
+  color: gray;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links li a:hover {
+  color: white;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 1);
+}
+
+/* toggle menu (untuk HP) */
+.toggle-icon {
+  display: none;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+/* dropdown menu (untuk HP) */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 2rem;
+  width: 200px;
+  background: rgba(75, 75, 75, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.dropdown.open {
+  display: block;
+  max-height: 300px;
+}
+
+
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown li {
+  text-align: center;
+  padding: 0.8rem 0;
+}
+
+.dropdown li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* responsive Nav */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .toggle-icon {
+    display: block;
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* responsive nav end */
+
+.wrapper{
+    flex: 1;
+    position: relative;
+    width: 90%;
+    margin:0 auto;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        width: 95%;
+    }
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    transition: background 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+}
+
+
+/* first section */
+.first-section{
+    width: 100%;
+    height: 100vh;
+}
+
+.column .description{
+    font-style: italic;
+    color: gray;
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+h2{
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 50px;
+}
+
+.first-section img{
+    width: 300px;
+    height: 400px;
+}
+
+.column .btn-more{
+    margin-top: 20px;
+    padding: 0.2rem 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border:2px solid #4a0000;
+    transition: transform 0.3s ease;
+}
+
+.column .btn-more:hover{
+    transform: scale(1.08);
+    border: 2px solid #ff0000;
+}
+
+.btn-more a{
+    font-weight: 500;
+    color: #ffdbdb;
+    text-decoration: none;
+}
+
+/* first responsive start*/
+@media (max-width:768px) {
+
+    h2 {
+        font-size: 22px;
+        line-height: 35px;
+        margin-bottom: 15px;
+    }
+
+    .column .description {
+        font-size: 10px;
+        margin-top: 50px;
+    }
+
+    .first-section img {
+        width: 200px;
+        height: 270px;
+    }
+
+    .column .btn-more {
+        padding: 0.3rem 0.8rem;
+    }
+
+    .btn-more a {
+        font-size: 12px;
+    }   
+}
+
+/* first responsive start*/
+    
+/* seccond section */
+.sec-section{
+    width: 100%;
+
+}
+
+.middle{
+    text-align: center;
+    justify-content: center;
+}
+
+.chard-list{
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 350px;
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer dan Edge lama */
+    border-radius: 40px;
+}
+
+.chard-list::-webkit-scrollbar {
+  display: none; /*hidde scrollbar for chrome*/
+}
+
+.sub-chard{
+    margin: 10px 5px;
+    width: 300px;
+    height: 350px;
+    background-color: rgba(255, 213, 213, 0.5);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sub-chard:hover{
+    transform: scale(1.02);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sub-chard img{
+    margin-top: 5px;
+    width: 90%;
+    height: 50%;
+}
+
+.sub-chard p{
+    color: black;
+    font-size: 12px;
+}
+
+.sub-chard h1{
+    margin: 5px 0;
+    font-size: 20px;
+    color: #313647;
+    font-family: 'comic sans ms';
+}
+
+/* sec responsive start */
+@media (max-width: 768px) {
+    .chard-list {
+        width: 95%;
+        height: 280px;
+        border-radius: 20px;
+    }
+
+    .sub-chard {
+        width: 220px;
+        height: 280px;
+        margin: 8px 4px;
+    }
+
+    .sub-chard img {
+        width: 85%;
+        height: 45%;
+    }
+
+    .sub-chard h1 {
+        font-size: 16px;
+    }
+
+    .sub-chard p {
+        font-size: 10px;
+    }
+}
+/* sec responsive end */
+
+/* third section */
+.third-section{
+    width: 100%;
+    padding: 10%;
+    box-sizing: border-box;    
+}
+
+.third-section h4{
+    margin-top: 5px;
+}
+.third-section .logo{
+    margin: 30px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.third-section img{
+    width: 50px;
+    height: 60px;
+    background-color: rgba(62, 62, 62, 0.5);
+    border:2px solid rgb(104, 0, 0);
+}
+.third-section img:hover{
+    background-color: rgba(39, 39, 39, 0.3);
+    border:2px solid red;
+}
+
+/*third responsive start*/
+@media (max-width: 768px) {
+    .third-section {
+        padding: 8%; /* lebih sempit di layar kecil */
+        text-align: center;
+    }
+
+    .third-section .logo {
+        justify-content: center; /* gambar di tengah di layar kecil */
+        margin: 20px 0;
+        gap: 15px;
+    }
+
+    .third-section img {
+        width: 40px;
+        height: 50px;
+    }
+
+    .third-section h4 {
+        font-size: 14px; /* agar proporsional */
+    }
+}
+/* third responsive end */
+
+
+/* four section */
+.four-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 450px; 
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 3px solid #5f0000;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Title Area */
+.four-section .tittle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.four-section .tittle .description {
+    margin-top: 5px;
+}
+
+/* Column Layout */
+.four-section .col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap; /* biar tidak rusak di layar kecil */
+}
+
+/* Form Styling */
+.four-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Input */
+.four-section input {
+    color: white;
+    width: 300px;
+    height: 40px;
+    padding: 3px;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #5f0000;
+    box-sizing: border-box;
+}
+
+/* Focus effect (dibatasi agar tidak menimpa elemen lain) */
+.four-section input:focus {
+    border-color: #ff4b2b;
+}
+
+/* Textarea */
+.four-section textarea {
+    color: white;
+    width: 80%;
+    height: 60px;
+    padding: 3px;
+    border: 2px solid #5f0000;
+    background-color: transparent;
+    margin-bottom: 30px;
+    outline: none;
+    resize: none; /* biar tidak ganggu layout */
+    box-sizing: border-box;
+}
+
+/* Button */
+.four-section button {
+    width: 50%;
+    margin: 0 auto;
+    height: 40px;
+    background-color: #5f0000;
+    color: white;
+    font-size: 16px; /* sebelumnya salah: font: 300px; */
+    transition: transform 0.3s ease;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.four-section button:hover {
+    transform: scale(1.05);
+    background-color: #8d0000;
+    cursor: pointer;
+}
+
+/* Icons container */
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    gap: 10px;
+}
+
+/* Icons list */
+.icons-list {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Icon link */
+.icons-list a {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #848586;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons-list a:hover {
+    transform: scale(1.05);
+    background-color: #ff0000;
+    border: 1px solid #fbfbfb;
+}
+
+
+/* four responsive start */
+@media (max-width: 768px) {
+    .four-section {
+        height: auto; /* biar menyesuaikan isi di HP */
+        padding: 15px;
+    }
+
+    .four-section .col {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .four-section input {
+        width: 90%;
+    }
+
+    .four-section textarea {
+        width: 90%;
+    }
+
+    .four-section button {
+        width: 70%;
+        font-size: 14px;
+    }
+
+    .icons {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .icons-list a {
+        font-size: 25px;
+        width: 35px;
+        height: 35px;
+    }
+}
+/* four responsive end */
+
+/*footer start*/
+.foot {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 12px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 768px) {
+  .foot {
+    font-size: 10px;       
+    padding: 10px 0;       
+    margin-top: 40px;      
+    width: 100%;           
+  }
+}
+/*footer end*/
