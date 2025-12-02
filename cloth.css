@@ -575,24 +575,3 @@ h2{
 }
 /* four responsive end */
 
-/*footer start*/
-.foot {
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  font-size: 12px;
-  width: 100%;
-  margin-top: 80px;
-}
-
-/* RESPONSIVE FOOTER */
-@media (max-width: 768px) {
-  .foot {
-    font-size: 10px;       
-    padding: 10px 0;       
-    margin-top: 40px;      
-    width: 100%;           
-  }
-}
-/*footer end*/
